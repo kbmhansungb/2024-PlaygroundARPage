@@ -208,7 +208,7 @@
       }
 
       //Set Facing Mode here ('environment', 'user', '')
-		window.unityFacingMode = "environment"
+      window.unityFacingMode = "environment";
 
       window.WEBCAM_SETTINGS = {
           video: {
@@ -216,6 +216,17 @@
           },
           audio: false
       };
+
+      async function SetWebCamSetting(facingMode) {
+        console.log("SetWebCamSetting { facingMode: " + facingMode + " }");
+        window.unityFacingMode = facingMode;
+
+        window.WEBCAM_SETTINGS = {
+          video: { facingMode: unityFacingMode, },
+          audio: false
+        };
+
+      }
 
       window.requestingForPermissions = false;
       async function RequestWebcam(){
@@ -291,7 +302,7 @@
           devices.forEach(mediaDevice => {
               if (mediaDevice.kind === 'videoinput') {
 
-                  if(window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')){
+                  if(window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing back')){
                       //back cam only
                       camDevices.push(mediaDevice);
                   }
