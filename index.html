@@ -232,7 +232,8 @@
       async function RequestWebcam(){
           window.requestingForPermissions = true;
           try{
-              window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+              //window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+              window.webcamStream = await navigator.mediaDevices.getUserMedia({ video: true })
               console.log("Webcam access granted");
               requestingForPermissions = false;
 
@@ -320,7 +321,7 @@
           });
           // 2024.12.19 카메라 권한 요청 추가
           // 출처: https://keepworking.tistory.com/28 [힘내라 일처리:티스토리]
-          navigator.mediaDevices.getUserMedia({ video: true })
+          //navigator.mediaDevices.getUserMedia({ video: true })
 
           var select = document.getElementById("chooseCamSel");
           //select.style.visibility = "visible"; // 2024.12.19 카메라 선택 기능 제거
