@@ -3,7 +3,7 @@
     "short_name": "PlaygroundQR",
     "start_url": "index.html",
     "display": "fullscreen",
-    "background_color": "#E4E8F1",
+    "background_color": "#FFFFFF",
     "theme_color": "#fff",
     "description": "",
     "icons": [{
